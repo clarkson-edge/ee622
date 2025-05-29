@@ -1,5 +1,9 @@
 # Week 1: Foundational Transformer Architectures for Biometric Analysis
 
+[![Week 1 Colab](https://img.shields.io/badge/Week%201-Open%20in%20Colab-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%201/lab/week1_transformer_attention_visualization.ipynb)
+
+[← Back to Course Main](../README.md)
+
 ## Overview
 This week introduces transformer architectures and their applications to biometric analysis. You'll learn how transformers differ from RNNs/CNNs, understand self-attention mechanisms, and implement attention visualization for biometric data.
 
@@ -11,117 +15,129 @@ This week introduces transformer architectures and their applications to biometr
 - Implement attention visualization techniques
 
 ## Schedule
-- **Lecture**: 25-minute presentation on transformer fundamentals
+- **Theory**: 25-minute presentation on transformer fundamentals
 - **Lab**: 20-minute hands-on attention visualization demo
 - **Materials Available**: Immediately after lecture
 
-## Required Setup
+## 🚀 Quick Start
+
+### Google Colab (Recommended)
+Click the Colab badge above to open the notebook directly from GitHub. All dependencies are pre-configured.
+
+### Local Setup
 ```bash
-# Install required packages in Google Colab/Kaggle
-!pip install torch torchvision transformers matplotlib numpy opencv-python
+# Install required packages
+pip install torch torchvision transformers matplotlib numpy opencv-python
 ```
 
-## Course Materials
+## 📚 Course Materials
 
 ### Lecture Materials
-- [Lecture Slides](./slides/week1-slides.pptx)
-- [Speaker Notes](./slides/week1-speaker-notes.md)
-- [Comprehensive FAQ](./materials/week1-faq.md)
+- [Lecture Slides](./slides/week1_transformer_biometrics_presentation.pptx)
+- [ViT Architecture Diagram](./slides/ViT-Architecture.png)
 
 ### Lab Materials
-- [Demo Notebook](./lab/week1-attention-visualization.ipynb)
-- [Sample Biometric Images](./lab/data/)
-- [Lab Instructions](./lab/week1-lab-guide.md)
+- **[Main Notebook](./lab/week1_transformer_attention_visualization.ipynb)** - Complete attention visualization implementation
+
+### Reference Materials
+- [Attention Is All You Need Paper](./materials/NIPS%20-%20Attention%20is%20All%20You%20Need.pdf)
+- [Iris-SAM Research Paper](./materials/Iris-SAM.pdf)
 
 ## Key Topics Covered
 
 ### 1. Transformer Architecture Fundamentals
 - Evolution from RNNs/CNNs to transformers
-- Encoder-decoder structure
-- Parallel processing advantages
-- Self-attention mechanisms
+- Encoder-decoder structure and parallel processing advantages
+- Self-attention mechanisms: `Attention(Q,K,V) = softmax(QK^T/√d_k)V`
 
 ### 2. Self-Attention for Biometrics
-- Query, Key, Value concepts
-- Multi-head attention
+- Query, Key, Value concepts for biometric features
+- Multi-head attention for different biometric aspects
 - Positional encoding for spatial/sequential data
-- Global context modeling
+- Global context modeling advantages
 
-### 3. Unified Architecture Benefits
-- Single architecture across modalities
-- Knowledge transfer capabilities
-- Cross-modal fusion opportunities
+### 3. Vision Transformers (ViT)
+- Image-to-sequence conversion for biometric images
+- Patch embedding strategies (16×16 patches typical)
+- CLS token for classification tasks
+- Attention pattern analysis
 
 ### 4. Practical Implementation
-- Vision Transformers (ViT) for biometric images
+- Vision Transformers for biometric images
 - Attention map extraction and visualization
-- Feature importance analysis
+- Feature importance analysis across modalities
 
 ## Essential Resources
 
-### Primary Papers
-- [Attention Is All You Need](https://arxiv.org/abs/1706.03762) (Vaswani et al., 2017)
-- [Vision Transformers](https://arxiv.org/abs/2010.11929) (Dosovitskiy et al., 2020)
+### 📄 Foundational Papers
+- [Attention Is All You Need](https://arxiv.org/abs/1706.03762) (Vaswani et al., 2017) - Original transformer
+- [Vision Transformers](https://arxiv.org/abs/2010.11929) (Dosovitskiy et al., 2020) - ViT foundation
 - [Vision Transformers for Vein Biometric Recognition](https://ieeexplore.ieee.org/document/10058202) (2023)
 - [Cross-Spectral Vision Transformer for Biometric Authentication](https://arxiv.org/html/2412.19160v2) (2024)
 
-### Tutorials and Guides
-- [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html) - Harvard NLP comprehensive tutorial
-- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - Jay Alammar's visual guide
+### 🌐 Online Resources
+- [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html) - Harvard NLP tutorial
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - Visual guide
 - [Hugging Face Transformers Documentation](https://huggingface.co/docs/transformers/index)
 
-### Video Resources
-- [Attention in Neural Networks](https://www.youtube.com/watch?v=SZorAJ4I-sA)
-- [Transformer Architecture Explained](https://www.youtube.com/watch?v=zxQyTK8quyY)
-- [Vision Transformers Tutorial](https://www.youtube.com/watch?v=PSs6nxngL6k)
-
-### Code Libraries
+### 🛠️ Tools and Libraries
 - [BertViz](https://github.com/jessevig/bertviz) - Attention visualization
 - [Transformer Lens](https://github.com/neelnanda-io/TransformerLens) - Model interpretability
 
-## Lab: Attention Visualization Demo
+## 🧪 Lab: Attention Visualization Demo
 
 ### Objectives
 - Extract attention maps from pre-trained Vision Transformers
 - Visualize attention patterns across biometric modalities (face, fingerprint, iris)
 - Compare attention evolution across transformer layers
-- Identify biometrically significant regions
+- Identify biometrically significant regions through attention analysis
 
-### Implementation Steps
-1. Load pre-trained ViT model and biometric samples
-2. Understand tokenization and patch-based processing
-3. Extract attention maps from transformer layers
-4. Visualize CLS token attention patterns
-5. Analyze attention across different layers
-6. Compare patterns across biometric modalities
-7. Identify feature importance through attention
-
-### Sample Code Structure
+### Implementation Highlights
 ```python
-# Load model and data
+# Core implementation pattern
 model = ViTForImageClassification.from_pretrained("google/vit-base-patch16-224")
-face_img = load_biometric_sample("your data here")
+biometric_image = load_sample_image()
 
-# Extract attention
-attention_maps = get_attention_maps(model, face_img)
+# Extract multi-layer attention maps
+attention_maps = extract_attention_maps(model, biometric_image)
 
-# Visualize attention patterns
-visualize_cls_attention(face_img, attention_maps)
+# Visualize CLS token attention patterns
+visualize_cls_attention(biometric_image, attention_maps)
+
+# Compare attention across biometric modalities
+compare_attention_patterns(face_img, fingerprint_img, iris_img)
 ```
 
-## Discussion Questions
+### Key Features Demonstrated
+- **Multi-Modal Analysis**: Face, fingerprint, and iris attention patterns
+- **Layer-Wise Evolution**: How attention develops through transformer layers
+- **Feature Importance**: Identifying critical regions for biometric recognition
+- **Visualization Techniques**: Heatmaps, attention rollout, and head analysis
+
+## 💭 Discussion Questions
 1. How do transformer attention mechanisms compare to human visual attention in biometric recognition?
 2. What advantages do transformers offer for cross-demographic biometric fairness?
-3. How can attention visualization improve biometric system security?
+3. How can attention visualization improve biometric system security and interpretability?
 4. What deployment challenges exist for transformer-based biometric systems?
 
-## Assignment
+## 📝 Assignment
 Complete the attention visualization lab and prepare a brief analysis of attention patterns across the three biometric modalities. Identify which regions receive the most attention and hypothesize why these areas are important for identity recognition.
 
-## Next Week Preview
-Week 2 will focus on transformer models specifically for fingerprint feature extraction, building on the attention visualization concepts learned this week.
+**Deliverables:**
+- Completed notebook with attention visualizations
+- Identification of biometrically significant regions
 
-## Support
-- **Email**: [storeyaw@clarkson.edu]
+## 🔄 Next Week Preview
+Week 2 will focus on transformer models specifically for fingerprint feature extraction and matching, building on the attention visualization concepts learned this week. You'll implement hybrid CNN-transformer architectures and work with real fingerprint datasets.
+
+---
+
+## 📚 Course Navigation
+- [← Main Course Page](../README.md)
+- [Course Syllabus](../syllabus.md)
+- [Week 2: Fingerprint Transformers →](../Week%202/README.md)
+
+## 🆘 Support
 - **Course Repository**: [https://github.com/clarkson-edge/ee622](https://github.com/clarkson-edge/ee622)
-
+- **Issues**: Submit GitHub issues for technical problems
+- **Discussions**: Use GitHub Discussions for course questions
