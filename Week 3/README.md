@@ -321,6 +321,4 @@ Week 4 will apply transformer architectures to facial recognition, exploring how
 
 ## 🆘 Support
 - **Course Repository**: [https://github.com/clarkson-edge/ee622](https://github.com/clarkson-edge/ee622)
-- **Issues**: Submit GitHub issues for technical problems
-- **Discussions**: Use GitHub Discussions for course questions
-- **Office Hours**: See syllabus for schedule
+- **Issues**: Submit GitHub issues for technical problems.
