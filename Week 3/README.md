@@ -40,10 +40,6 @@ pip install base64  # For API encoding
 
 ## 📚 Course Materials
 
-### Theory Materials
-- **[Lecture Slides](./slides/week3_theory_minutiae_attention.pptx)** - Complete theoretical foundation
-- **[Cell-by-Cell Teaching Script](./teaching_script.md)** - Detailed instructor guide with verbal scripts
-
 ### Hands-On Implementation
 Three progressive notebooks building a complete minutiae detection system:
 
