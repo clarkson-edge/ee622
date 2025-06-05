@@ -26,6 +26,14 @@ This repository contains materials for a graduate-level course exploring how sel
 **Topics:** Hybrid CNN-transformer architectures, quality-aware processing, AFIS integration
 **Lab:** SOCOFing dataset processing, core-focused attention analysis, adaptive position encoding
 
+### Week 3: Self-Attention for Minutiae Detection
+[![Week 3 Notebook 1](https://img.shields.io/badge/Notebook%201-Traditional-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook1_fundamentals.ipynb)
+[![Week 3 Notebook 2](https://img.shields.io/badge/Notebook%202-Attention-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook2_attention.ipynb)
+[![Week 3 Notebook 3](https://img.shields.io/badge/Notebook%203-Production-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook3_production.ipynb)
+
+**Topics:** Real-world minutiae detection challenges, attention-based detection, privacy-preserving biometrics
+**Lab:** Fix "0 detection" problem, implement attention mechanisms, build production system with cancelable templates
+
 ## 📚 Repository Structure
 
 ```
@@ -38,6 +46,13 @@ This repository contains materials for a graduate-level course exploring how sel
 ├── Week 2/
 │   ├── lab/week2_nb1_fingerprint_transformer.ipynb
 │   └── slides/week2_theory_fingerprint_transformers.pptx
+├── Week 3/
+│   ├── lab/
+│   │   ├── week3_notebook1_fundamentals.ipynb
+│   │   ├── week3_notebook2_attention.ipynb
+│   │   └── week3_notebook3_production.ipynb
+│   ├── slides/week3_theory_minutiae_attention.pptx
+│   └── teaching_script.md
 ├── syllabus.md
 ├── biometric_transformer_cheatsheet.md
 ├── biometrics-glossary.md
@@ -53,6 +68,7 @@ This repository contains materials for a graduate-level course exploring how sel
 - Visualize and interpret attention patterns (core-focused analysis)
 - Evaluate performance against traditional methods using standard datasets
 - Develop adaptive position encoding for biometric-specific spatial relationships
+- Build production-ready biometric systems with privacy preservation
 
 ## 🛠️ Setup
 
@@ -61,6 +77,7 @@ Click the Colab badges above to open notebooks directly from the GitHub reposito
 - SOCOFing dataset access via kagglehub
 - Pre-trained transformer models
 - Visualization libraries for attention analysis
+- Privacy-preserving template generation
 
 ### Local Development
 ```bash
@@ -72,6 +89,7 @@ conda activate biometric-transformers
 pip install torch torchvision transformers
 pip install opencv-python scikit-image matplotlib seaborn
 pip install kagglehub gradio numpy scipy pandas
+pip install einops  # For attention mechanisms (Week 3)
 ```
 
 ## 📖 Key Resources & References
@@ -128,49 +146,14 @@ pip install kagglehub gradio numpy scipy pandas
 - **Core-Focused Analysis:** Attention correlation with fingerprint structure
 - **Hybrid Architecture:** CNN backbone + transformer layers for global-local features
 
+### Week 3: Production Minutiae Detection System
+- **Real-World Problem Solving:** Fix traditional detection failing on real data (0→24+ minutiae)
+- **Attention-Based Detection:** Type-specific attention heads for endings and bifurcations
+- **Ensemble Methods:** Combine traditional and attention approaches for robustness
+- **Privacy-Preserving Templates:** Cancelable biometrics with one-way transformations
+- **Production API:** Complete system with error handling and monitoring
+
 ### Key Innovations Demonstrated
 - **Adaptive Position Encoding:** Fingerprint core detection and relative spatial encoding
 - **Quality-Aware Attention:** Dynamic weighting based on patch reliability
 - **Multi-Layer Attention Analysis:** Evolution from structural to semantic focus
-- **Cross-Modal Understanding:** Attention patterns transferable across biometric types
-
-## 📊 Performance Benchmarks
-
-The implementations demonstrate state-of-the-art results:
-- **Attention Correlation:** 0.4618 distance-attention correlation in fingerprint analysis
-- **Quality Assessment:** Automatic patch scoring for robust recognition
-- **Core Detection Accuracy:** Poincaré index-based singular point detection
-- **Multi-Modal Fusion:** Cross-attention mechanisms for enhanced security
-
-## 🤝 Contributing
-
-This is an educational repository designed for graduate-level biometric research. Contributions welcome for:
-- Additional biometric modality implementations
-- Novel attention visualization techniques
-- Performance optimizations for edge deployment
-- New dataset integrations
-
-For questions or suggestions, please open an issue or submit a pull request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🔬 Research Applications
-
-This repository serves as a foundation for:
-- **Academic Research:** PhD-level biometric transformer development
-- **Industry Applications:** Production-ready biometric authentication systems
-- **Security Research:** Anti-spoofing and presentation attack detection
-- **Cross-Modal Studies:** Multimodal biometric fusion research
-
----
-
-**🎓 Academic Use:** This repository is designed for graduate-level education in biometric systems and transformer architectures. All implementations use real datasets and demonstrate production-ready techniques while maintaining educational clarity.
-
-**⚡ Quick Links:**
-- [📖 Complete Syllabus](syllabus.md)
-- [🔧 Architecture Cheat Sheet](biometric_transformer_cheatsheet.md)
-- [📚 Technical Glossary](biometrics-glossary.md)
-- [🧮 Mathematical Reference](transformer-formulas-reference.md)
-- [🎓 Research Projects](graduate-projects.md)
