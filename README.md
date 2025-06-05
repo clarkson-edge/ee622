@@ -51,8 +51,6 @@ This repository contains materials for a graduate-level course exploring how sel
 │   │   ├── week3_notebook1_fundamentals.ipynb
 │   │   ├── week3_notebook2_attention.ipynb
 │   │   └── week3_notebook3_production.ipynb
-│   ├── slides/week3_theory_minutiae_attention.pptx
-│   └── teaching_script.md
 ├── syllabus.md
 ├── biometric_transformer_cheatsheet.md
 ├── biometrics-glossary.md
