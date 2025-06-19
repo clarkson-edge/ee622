@@ -2,7 +2,7 @@
 
 [![Week 3 Notebook 1](https://img.shields.io/badge/Notebook%201-Traditional%20Detection-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook1_fundamentals.ipynb)
 [![Week 3 Notebook 2](https://img.shields.io/badge/Notebook%202-Attention%20Mechanisms-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook2_attention.ipynb)
-[![Week 3 Notebook 3](https://img.shields.io/badge/Notebook%203-Production%20System-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook3_production.ipynb)
+[![Week 3 Notebook 3](https://img.shields.io/badge/Notebook%203-Production%20System-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook3_fixed.ipynb)
 
 [← Back to Course Main](../README.md) | [← Week 2](../Week%202/README.md) | [→ Week 4](../Week%204/README.md)
 
@@ -55,11 +55,17 @@ Three progressive notebooks building a complete minutiae detection system:
    - Comparison with traditional methods
    - Feature-based visualization
 
-3. **[Notebook 3: Production System](./lab/week3_notebook3_production.ipynb)** - Complete Pipeline
+3. **[Notebook 3: Production System](./lab/week3_notebook3_fixed.ipynb)** - Complete Pipeline
    - Ensemble detection strategy
    - Privacy-preserving templates
    - Production API with monitoring
    - Performance evaluation
+
+### Course Notes
+**Chapter 3 Notes** - Available in multiple formats:
+- [EE622 Chapter 3.md](./notes/EE622%20Chapter%203.md) - Markdown format
+- [EE622 Chapter 3.pdf](./notes/EE622%20Chapter%203.pdf) - PDF for printing
+- [EE622 Chapter 3.odt](./notes/EE622%20Chapter%203.odt) - OpenDocument format
 
 ## Key Topics Covered
 

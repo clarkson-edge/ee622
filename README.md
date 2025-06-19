@@ -29,33 +29,83 @@ This repository contains materials for a graduate-level course exploring how sel
 ### Week 3: Self-Attention for Minutiae Detection
 [![Week 3 Notebook 1](https://img.shields.io/badge/Notebook%201-Traditional-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook1_fundamentals.ipynb)
 [![Week 3 Notebook 2](https://img.shields.io/badge/Notebook%202-Attention-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook2_attention.ipynb)
-[![Week 3 Notebook 3](https://img.shields.io/badge/Notebook%203-Production-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook3_production.ipynb)
+[![Week 3 Notebook 3](https://img.shields.io/badge/Notebook%203-Production-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%203/lab/week3_notebook3_fixed.ipynb)
 
 **Topics:** Real-world minutiae detection challenges, attention-based detection, privacy-preserving biometrics
 **Lab:** Fix "0 detection" problem, implement attention mechanisms, build production system with cancelable templates
+
+### Week 4: Vision Transformers (ViT) for Facial Recognition
+[![Week 4 Colab](https://img.shields.io/badge/Week%204-Open%20in%20Colab-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%204/lab/Week4_FaceBiometrics.ipynb)
+
+**Topics:** Face image patching and sequence processing, ViT architecture adaptation, comparing ViT with CNN approaches
+**Lab:** Implementing ViT for face recognition, face verification with transformers, visualization of facial feature attention
+
+### Week 5: Cross-Attention Networks for Facial Attribute Analysis
+[![Week 5 Colab](https://img.shields.io/badge/Week%205-Open%20in%20Colab-blue?logo=google-colab)](https://colab.research.google.com/github/clarkson-edge/ee622/blob/main/Week%205/lab/Week5_Notebook1.ipynb)
+
+**Topics:** Cross-attention mechanisms for multi-attribute learning, handling extreme class imbalance, attention visualization
+**Lab:** Complete implementation from dataset imbalance discovery to advanced visualization, focal loss and aggressive weighting strategies
 
 ## 📚 Repository Structure
 
 ```
 ├── Week 1/
-│   ├── lab/week1_transformer_attention_visualization.ipynb
+│   ├── lab/
+│   │   └── week1_transformer_attention_visualization.ipynb
 │   ├── materials/
 │   │   ├── Iris-SAM.pdf
 │   │   └── NIPS - Attention is All You Need.pdf
-│   └── slides/week1_transformer_biometrics_presentation.pptx
+│   ├── notes/
+│   │   ├── EE622 Chapter 1.md
+│   │   ├── EE622 Chapter 1.odt
+│   │   └── EE622 Chapter 1.pdf
+│   ├── slides/
+│   │   ├── ViT-Architecture.png
+│   │   └── week1_transformer_biometrics_presentation.pptx
+│   └── README.md
 ├── Week 2/
-│   ├── lab/week2_nb1_fingerprint_transformer.ipynb
-│   └── slides/week2_theory_fingerprint_transformers.pptx
+│   ├── lab/
+│   │   └── week2_nb1_fingerprint_transformer.ipynb
+│   ├── notes/
+│   │   ├── EE622 Chapter 2.md
+│   │   ├── EE622 Chapter 2.odt
+│   │   └── EE622 Chapter 2.pdf
+│   ├── slides/
+│   │   └── week2_theory_fingerprint_transformers.pptx
+│   └── README.md
 ├── Week 3/
 │   ├── lab/
 │   │   ├── week3_notebook1_fundamentals.ipynb
 │   │   ├── week3_notebook2_attention.ipynb
-│   │   └── week3_notebook3_production.ipynb
+│   │   └── week3_notebook3_fixed.ipynb
+│   ├── notes/
+│   │   ├── EE622 Chapter 3.md
+│   │   ├── EE622 Chapter 3.odt
+│   │   └── EE622 Chapter 3.pdf
+│   └── README.md
+├── Week 4/
+│   ├── lab/
+│   │   └── Week4_FaceBiometrics.ipynb
+│   ├── notes/
+│   │   ├── EE622 Chapter 4.md
+│   │   ├── EE622 Chapter 4.odt
+│   │   └── EE622 Chapter 4.pdf
+│   ├── slides/
+│   │   └── Week4_FaceBiometrics.pptx
+│   ├── facial-recognition-glossary.md
+│   └── README.md
+├── Week 5/
+│   ├── lab/
+│   │   └── Week5_Notebook1.ipynb
+│   └── README.md
+├── Week 6-10/
+│   └── (Under development)
 ├── syllabus.md
 ├── biometric_transformer_cheatsheet.md
 ├── biometrics-glossary.md
 ├── transformer-formulas-reference.md
-└── graduate-projects.md
+├── graduate-projects.md
+└── weekly-theory-practice-guide.md
 ```
 
 ## 🎯 Learning Objectives
@@ -88,6 +138,8 @@ pip install torch torchvision transformers
 pip install opencv-python scikit-image matplotlib seaborn
 pip install kagglehub gradio numpy scipy pandas
 pip install einops  # For attention mechanisms (Week 3)
+pip install plotly ipywidgets imageio  # For advanced visualizations (Week 5)
+pip install face-recognition dlib timm  # For face biometrics (Week 4)
 ```
 
 ## 📖 Key Resources & References
@@ -151,7 +203,23 @@ pip install einops  # For attention mechanisms (Week 3)
 - **Privacy-Preserving Templates:** Cancelable biometrics with one-way transformations
 - **Production API:** Complete system with error handling and monitoring
 
+### Week 4: Vision Transformer Face Recognition
+- **ViT Implementation:** Build Vision Transformer from scratch for faces
+- **Face Preprocessing:** Detection, alignment, and normalization pipeline
+- **Attention Analysis:** Visualize which facial features matter most
+- **Performance Comparison:** Benchmark against FaceNet and ArcFace
+- **Multi-Scale Processing:** Handle varying face sizes and poses
+
+### Week 5: Cross-Attention for Facial Attributes
+- **Extreme Imbalance Handling:** Solve 2% positive rate challenges
+- **Focal Loss Implementation:** Advanced loss functions for rare attributes
+- **Interactive Visualization:** Build attention explorers with frequency awareness
+- **Production Solutions:** From stuck models to successful deployment
+- **Comprehensive Analysis:** ROC curves, F1 scores, and performance dashboards
+
 ### Key Innovations Demonstrated
 - **Adaptive Position Encoding:** Fingerprint core detection and relative spatial encoding
 - **Quality-Aware Attention:** Dynamic weighting based on patch reliability
 - **Multi-Layer Attention Analysis:** Evolution from structural to semantic focus
+- **Extreme Imbalance Solutions:** Focal loss, 50x weights, diversity penalties
+- **Production-Ready Systems:** APIs, privacy preservation, and monitoring
